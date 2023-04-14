@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ls current user
+whoami
