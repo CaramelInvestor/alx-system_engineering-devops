@@ -20,5 +20,4 @@ do
 	else
 		echo $number
 	fi
-	(( number++ ))
 done
