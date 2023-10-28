@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#configure ssh to refuse to authenticate using a password
+
+Host 35.174.208.232
+IdentityFile ~/.ssh/school
+PasswordAuthentication no
