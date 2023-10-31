@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Redirection to another page
-# Update package lists and install Nginx
+# Update package lists
 sudo apt-get -y update
+
+# install Nginx
 sudo apt-get -y install nginx
 
 # Create or edit content in this dir
