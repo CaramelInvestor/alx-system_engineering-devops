@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Use an official Apache web server image as the base image
 FROM httpd:2.4
 
