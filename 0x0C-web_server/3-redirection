@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Redirection to another page
+# Update package lists and install Nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# Create or edit content in this dir
+sudo chown -R "$USER":"$USER" /var/www
+
+# Create an index.html file containing Hello World!
+echo "Hello World!" > /var/www/html/index.html-debian.html
+
+# Redirect the page 301 moved permanently
+sed -i "48i\\\tif (\$request_filename ~ redirect_me){\n\t\trewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}" /etc/nginx/sites-available/default
+
+# Restart Nginx
+service nginx start
