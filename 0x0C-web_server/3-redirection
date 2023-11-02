@@ -16,4 +16,4 @@ echo "Hello World!" > /var/www/html/index.html-debian.html
 sed -i "48i\\\tif (\$request_filename ~ redirect_me){\n\t\trewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}" /etc/nginx/sites-available/default
 
 # Restart Nginx
-service nginx start
+sudo service nginx restart
