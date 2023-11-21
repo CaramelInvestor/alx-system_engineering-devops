@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# From task #1, make your fix short and sweet.
+
+sed -i 's/^user .*/user nginx;/g' /etc/nginx/nginx.conf
+nginx -g 'daemon off' & sleep 2
+ps -p $(pgrep nginx) -o user | grep -q nginx && echo "Nginx is running as nginx user."
+nc -z 0 8080 && echo "Nginx is listening on port 8080."
+tail -f /dev/null
