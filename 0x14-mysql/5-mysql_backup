@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generates a compressed archive of a MySQL dump.
+# Generates a compressed archive of a MySQL dump
 
 # Get current date in required format
 DATE=$(date +"%d-%m-%Y")
