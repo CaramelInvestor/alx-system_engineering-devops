@@ -39,6 +39,9 @@ if __name__ == "__main__":
         todos_done = get_todos_done_by_user(user, todos)
 
         print(
-            f"Employee {user['name']} is done with tasks ({len(todos_done)}/{len(todos)}):")
+            "Employee {} is done with tasks ({}/{}):".format(
+                user['name'],
+                len(todos_done),
+                len(todos)))
         for done in todos_done:
             print("\t {}".format(done["title"]))
