@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""This module contains functions for gathering data from an API"""
+
 
 from sys import argv
 from requests import get
