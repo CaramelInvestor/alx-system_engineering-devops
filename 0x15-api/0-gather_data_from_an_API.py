@@ -2,8 +2,8 @@
 """This module contains functions for gathering data from an API"""
 
 
-from sys import argv
 from requests import get
+from sys import argv
 
 # rest api url
 API = "https://jsonplaceholder.typicode.com"
