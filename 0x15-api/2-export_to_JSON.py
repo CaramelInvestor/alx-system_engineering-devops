@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""This module exports to-do list information for a given employee ID to JSON format."""
+"""returns file injson format"""
 import json
 import requests
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    user_id = sys.argv[1]
-    url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(f"url + users/{user_id}").json()
-    username = user.get("username")
-    todos = requests.get(url + "todos", params={"userId": user_id}).json()
+    id = argv[1]
+    link = "https://jsonplaceholder.typicode.com/"
+    person = requests.get(link + "users/{}".format(id)).json()
+    name = person.get("username")
+    tasks = requests.get(link + "todos", params={"userId": id}).json()
 
-    with open("{}.json".format(user_id), "w") as jsonfile:
-        json.dump({user_id: [{
-            "task": t.get("title"),
-            "completed": t.get("completed"),
-            "username": username
-        } for t in todos]}, jsonfile)
+    with open("{}.json".format(id), "w") as f:
+        json.dump({id: [{
+            "username": name,
+            "task": idx.get("title"),
+            "completed": idx.get("completed")
+        } for idx in tasks]}, f)
